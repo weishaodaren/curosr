@@ -1,0 +1,39 @@
+{
+  "name": "curosr",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "start": "tsup ./index.ts --format esm,cjs --legacy-output --watch --dts",
+    "build": "tsup ./index.ts --format esm,cjs --legacy-output --dts",
+    "clean": "rm -rf dist",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "publish:": "pnpm build && pnpm publish --no-git-checks",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weishaodaren/curosr.git"
+  },
+  "keywords": [
+    "cursor"
+  ],
+  "author": "weishaodaren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weishaodaren/curosr/issues"
+  },
+  "homepage": "https://github.com/weishaodaren/curosr#readme",
+  "devDependencies": {
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6"
+  }
+}
